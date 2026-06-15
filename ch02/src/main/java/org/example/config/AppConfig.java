@@ -32,6 +32,4 @@ public class AppConfig {
     public Greeting greeting() {
         return new Greeting();
     }
-
-
 }

@@ -9,8 +9,6 @@ public class Computer {
     @Autowired
     private CPU cpu;
 
-
-
     // 생성자 주입
     private RAM ram;
     @Autowired // 권장
