@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spring boot</title>
+</head>
+<body>
+  <h3>3. spring boot</h3>
+
+  <h4>스프링부트 기본</h4>
+  <a href="/ch03/sub1/hello">hello</a> <br>
+  <a href="/ch03/sub1/welcome">welcome</a> <br>
+  <a href="/ch03/sub1/greeting">greeting</a> <br>
+
+
+  <h4>타임리프 값 출력</h4>
+  <p>[[${num1}]]</p>  <!-- 방법 1 -->
+  <p th:text="${num2}">데이터</p> <!-- 방법 2 -->
+  <p th:text="${str1}">데이터</p>
+  <p>[[${str2}]]</p>
+
+  <h4>타임리프 조건문</h4>
+  <p th:if="${user1.name == '홍길동'}">user1은 홍길동입니다.</p>
+  <p th:if="${user1.name == '김유신'}">user1은 김유신입니다.</p>
+
+  <p th:if="${user1.age >= 20}">user1은 성인입니다.</p>
+  <p th:unless="${user1.age >=20}">user1은 미성년입니다.</p>
+
+  <p th:switch="${user2.age >= 20}">
+    <span th:case="true">user2는 20세 이상입니다.</span>
+    <span th:case="false">user2는 20세 미만입니다.</span>
+  </p>
+
+
+
+  <h4>타임리프 반복문</h4>
+  <ul>
+    <li th:each="num : ${#numbers.sequence(1, 10)}">
+      <span th:text="${num}"></span>
+    </li>
+  </ul>
+  <table border="1">
+    <tr>
+      <td>아이디</td>
+      <td>이름</td>
+      <td>생년월일</td>
+      <td>나이</td>
+    </tr>
+    <tr th:each="user:${dtoList}">
+      <td>[[${user.userid}]]</td>
+      <td>[[${user.name}]]</td>
+      <td>[[${user.birth}]]</td>
+      <td>[[${user.age}]]</td>
+    </tr>
+  </table>
+
+
+  <h4>타임리프 링크</h4>
+  <a th:href="@{/sub1/hello}">hello</a>
+  <a th:href="@{/sub1/welcome}">welcome</a>
+  <a th:href="@{/sub1/greeting}">greeting</a>
+
+
+  <h4>타임리프 include</h4>
+  <th:block th:include="/inc/_head.html"/> <!-- 타임리프 가상 태그 -->
+  <th:block th:include="/inc/_tail.html"/>
+
+  <th:block th:include="~{/inc/_head.html}"/>
+  <th:block th:include="~{/inc/_tail.html}"/>
+
+  <div th:insert="/inc/_head.html"></div>
+  <div th:insert="/inc/_tail.html"></div>
+
+  <div th:replace="/inc/_head.html"></div>
+  <div th:replace="~{/inc/_tail.html}"></div>
+
+  <h4>폼 전송</h4>
+  <a th:href="@{/sub2/register}">폼 전송</a>
+
+</body>
+</html>
