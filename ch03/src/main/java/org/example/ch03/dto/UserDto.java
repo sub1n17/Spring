@@ -18,7 +18,4 @@ public class UserDto {
     private String birth;
     private int age;
 
-
-
-
 }
