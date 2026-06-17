@@ -2,31 +2,35 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user2::수정</title>
+		<title>user3::수정</title>
 	</head>
 	<body>
-		<h3>User2 수정</h3>
+		<h3>User3 수정</h3>
 		
 		<a th:href="@{/}">메인</a>
-		<a th:href="@{/user2/list}">목록</a>
+		<a th:href="@{/user3/list}">목록</a>
 		
-		<form th:action="@{/user2/modify}" method="post">
+		<form th:action="@{/user3/modify}" method="post">
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="userid" th:value="${user2DTO.userid}" readonly></td>
+					<td><input type="text" name="userid" th:value="${user3DTO.userid}" readonly></td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="name" th:value="${user2DTO.name}"></td>
+					<td><input type="text" name="name" th:value="${user3DTO.name}"></td>
 				</tr>
 				<tr>
 					<td>생년월일</td>
-					<td><input type="text" name="birth" th:value="${user2DTO.birth}"></td>
+					<td><input type="text" name="birth" th:value="${user3DTO.birth}"></td>
+				</tr>
+                <tr>
+					<td>휴대폰번호</td>
+					<td><input type="text" name="hp" th:value="${user3DTO.hp}"></td>
 				</tr>
 				<tr>
 					<td>주소</td>
-					<td><input type="number" name="addr" th:value="${user2DTO.addr}"></td>
+					<td><input type="number" name="addr" th:value="${user3DTO.addr}"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right">

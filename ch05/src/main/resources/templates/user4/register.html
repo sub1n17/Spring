@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>user3::등록</title>
+	<title>user4::등록</title>
 </head>
 <body>
-<h3>User3 등록</h3>
+<h4>User4 등록</h4>
 
 <a th:href="@{/}">메인</a>
-<a th:href="@{/user3/list}">목록</a>
+<a th:href="@{/user4/list}">목록</a>
 
-<form th:action="@{/user3/register}" method="post">
+<form th:action="@{/user4/register}" method="post">
 	<table border="1">
 		<tr>
 			<td>아이디</td>
@@ -20,9 +20,16 @@
 			<td>이름</td>
 			<td><input type="text" name="name"></td>
 		</tr>
+        <tr>
+			<td>성별</td>
+			<td>
+                <input type="radio" name="gender" value="M">남
+                <input type="radio" name="gender"  value="F">여
+            </td>
+		</tr>
 		<tr>
-			<td>생년월일</td>
-			<td><input type="text" name="birth"></td>
+			<td>나이</td>
+			<td><input type="number" name="age"></td>
 		</tr>
         <tr>
             <td>휴대폰번호</td>

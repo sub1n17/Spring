@@ -2,19 +2,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user3::목록</title>
+		<title>user4::목록</title>
 	</head>
 	<body>
-		<h3>User3 목록</h3>
+		<h4>User4 목록</h4>
 		
 		<a th:href="@{/}">메인</a>
-		<a th:href="@{/user3/register}">등록</a>
+		<a th:href="@{/user4/register}">등록</a>
 		
 		<table border="1">
 			<tr>
 				<th>아이디</th>
 				<th>이름</th>
-				<th>생년월일</th>
+				<th>성별</th>
+				<th>나이</th>
 				<th>휴대폰번호</th>
 				<th>주소</th>
 				<th>관리</th>
@@ -24,12 +25,13 @@
 				<!-- 표현언어에서는 객체 속성을 직접 참조가능 -->
 				<td>[[${dto.userid}]]</td>
 				<td>[[${dto.name}]]</td>
-				<td th:text="${dto.birth}">생년월일</td>
+				<td>[[${dto.gender}]]</td>
+				<td>[[${dto.age}]]</td>
 				<td th:text="${dto.hp}">휴대폰번호</td>
 				<td th:text="${dto.addr}">주소</td>
 				<td>
-					<a th:href="@{/user3/modify(userid=${dto.userid})}">수정</a>
-					<a th:href="@{/user3/remove(userid=${dto.userid})}">삭제</a>
+					<a th:href="@{/user4/modify(userid=${dto.userid})}">수정</a>
+					<a th:href="@{/user4/remove(userid=${dto.userid})}">삭제</a>
 				</td>
 			</tr>
 		</table>
