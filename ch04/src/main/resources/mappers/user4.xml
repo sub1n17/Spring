@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 4.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.ch04.dao.User4DAO">
+
+    <!-- id 값은 DAO의 메서드명으로 맞추기 -->
+    <select id="select" resultType="org.example.ch04.dto.User4DTO">
+        SELECT * FROM User4 WHERE userid=#{userid};
+    </select>
+
+    <select id="selectAll" resultType="org.example.ch04.dto.User4DTO">
+        SELECT * FROM User4;
+    </select>
+
+    <insert id="insert">
+        INSERT INTO User4 SET
+                            userid=#{userid},
+                            name=#{name},
+                            gender=#{gender},
+                            age=#{age},
+                            hp=#{hp},
+                            addr=#{addr};
+    </insert>
+
+    <update id="update">
+        UPDATE User4 SET
+                        name=#{name},
+                        gender=#{gender},
+                        age=#{age},
+                        hp=#{hp},
+                        addr=#{addr}
+                    WHERE
+                        userid=#{userid};
+
+    </update>
+
+    <delete id="delete">
+        DELETE FROM User4 WHERE userid=#{userid};
+    </delete>
+
+</mapper>

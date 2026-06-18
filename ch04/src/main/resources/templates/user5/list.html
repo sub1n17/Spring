@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>user5::목록</title>
+	</head>
+	<body>
+		<h5>User5 목록</h5>
+		
+		<a th:href="@{/}">메인</a>
+		<a th:href="@{/user5/register}">등록</a>
+		
+		<table border="1">
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>성별</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>관리</th>
+			</tr>
+
+			<tr th:each="dto:${dtoList}">
+				<!-- 표현언어에서는 객체 속성을 직접 참조가능 -->
+				<td>[[${dto.seq}]]</td>
+				<td>[[${dto.name}]]</td>
+				<td>[[${dto.gender}]]</td>
+				<td>[[${dto.age}]]</td>
+				<td th:text="${dto.addr}">주소</td>
+				<td>
+					<a th:href="@{/user5/modify(seq=${dto.seq})}">수정</a>
+					<a th:href="@{/user5/remove(seq=${dto.seq})}">삭제</a>
+				</td>
+			</tr>
+		</table>
+		
+		
+	</body>
+</html>
