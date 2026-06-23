@@ -1,0 +1,14 @@
+package org.example.ch06.repository.board;
+
+import org.example.ch06.entity.board.Article;
+import org.example.ch06.entity.board.File;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FileRepository extends JpaRepository<File, Integer> {
+
+
+
+
+}
