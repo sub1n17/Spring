@@ -305,3 +305,5 @@
 2026-06-18T11:33:30.791+09:00  INFO 3844 --- [ch04] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2026-06-18T11:33:30.864+09:00  INFO 3844 --- [ch04] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-18T11:33:30.868+09:00  INFO 3844 --- [ch04] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-18T17:50:00.260+09:00  INFO 172 --- [ch04] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-18T17:50:00.277+09:00  INFO 172 --- [ch04] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
