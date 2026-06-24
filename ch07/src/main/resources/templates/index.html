@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title>Spring Security</title>
@@ -7,11 +7,46 @@
 <body>
     <h3>7. Spring Security</h3>
 
+<!--
+    thymeleaf security 화면 처리
+    1) 의존성 추가
+    - 메이븐 > thymeleaf-extras-springsecurity6 검색
+    - build.gradle 파일에 thymeleaf-extras-springsecurity6 의존성 추가/설치
+
+    2) thymeleaf spring security 선언
+    - 상단 html 태그에 sec 네임스페이스 선언
+
+    3) thymeleaf security 속성
+    - sec:authorize : 인증 여부 처리 속성
+    - isAnonymous() : 인증 여부 확인
+    - isAuthenticated() : 인증 여부 확인
+-->
     <h4>인증 테스트</h4>
-    <a th:href="@{/user/login}">로그인</a>
-    <a th:href="@{/user/register}">회원가입</a>
+    <th:block sec:authorize="isAnonymous()">
+        <a th:href="@{/user/login}">로그인</a>
+        <a th:href="@{/user/register}">회원가입</a>
+    </th:block>
+    <th:block sec:authorize="isAuthenticated()">
+        <a th:href="@{/user/info}">사용자 확인</a>
+        <a th:href="@{/user/logout}">로그아웃</a>
+    </th:block>
 
 
     <h4>인가 테스트</h4>
+    <th:block sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/admin/index}">관리자 메인</a> <br>
+    </th:block>
+
+    <th:block sec:authorize="hasAnyRole('ADMIN', 'MANAGER')">
+        <a th:href="@{/manager/index}">매니저 메인</a> <br>
+    </th:block>
+
+    <th:block sec:authorize="hasAnyRole('ADMIN', 'MANAGER', 'MEMBER')">
+        <a th:href="@{/member/index}">회원 메인</a> <br>
+    </th:block>
+
+    <th:block >
+        <a th:href="@{/guest/index}">손님 메인</a> <br>
+    </th:block>
 </body>
 </html>

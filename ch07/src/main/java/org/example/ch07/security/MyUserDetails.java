@@ -28,6 +28,7 @@ public class MyUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // 권한 목록 생성 후 반환해야 인증된 사용자의 권한 처리 가능
+        // ROLE_ 접두어를 사용해야 hasRole(), hasAnyRole() 권한처리 메서드 사용가능
         List<GrantedAuthority> authorityList = new ArrayList<>();
         authorityList.add(new SimpleGrantedAuthority(("ROLE_" + user.getRole())));
 
