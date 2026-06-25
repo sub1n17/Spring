@@ -1,0 +1,31 @@
+logging:
+    file:
+        name: /logs/ch06.log
+    level:
+        root: info
+server:
+    servlet:
+        context-path: /ch09
+spring:
+    application:
+        name: ch09
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 1234
+        url: jdbc:mysql://localhost:3306/studydb
+        username: sub1n17
+    jpa:
+        database: mysql
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+
+# JWT 설정
+jwt:
+    issuer: sub1n17@naver.com
+    secret: d3d53de565e83f307e055c1ea12ef689
